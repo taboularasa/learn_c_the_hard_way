@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
             universe_of_defects);
 
     double expected_bugs = bugs * bug_rate;
-    printf("You are expected to have %f bugs.\n",
+    printf("You are expected to have %.2f bugs.\n",
             expected_bugs);
 
     double part_of_universe = expected_bugs / universe_of_defects;
