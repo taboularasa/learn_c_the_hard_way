@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
     int i = 0;
     char **inputs = argv + 1;
 
-    int *numbers = argv + 1;
+    int *numbers = malloc(count * sizeof(int));
     if(!numbers) die("Memory error");
 
     for(i = 0; i < count; i++) {
