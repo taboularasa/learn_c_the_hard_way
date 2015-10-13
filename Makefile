@@ -1,8 +1,8 @@
 CFLAGS=-Wall -g
 
-all: src/ex19
+all: ex19
 
-ex19: src/object.o
+ex19: object.o
 
 clean:
-	rm -f src/ex19
+	rm -f ex19

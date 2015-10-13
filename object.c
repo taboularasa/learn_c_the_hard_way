@@ -20,7 +20,7 @@ void Object_describe(void *self)
     printf("%s\n", obj->description);
 }
 
-void Object_init(void *self)
+int Object_init(void *self)
 {
     // do nothing really;
     return 1;
@@ -32,7 +32,7 @@ void *Object_move(void *self, Direction direction)
     return NULL;
 }
 
-int *Object_attack(void *self, int damage)
+int Object_attack(void *self, int damage)
 {
     printf("You can't attack that.\n");
     return 0;

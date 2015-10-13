@@ -14,7 +14,7 @@ int Monster_attack(void *self, int damage)
     monster->hit_points -= damage;
 
     if(monster->hit_points > 0) {
-        printf("It is still alive.%s\n");
+        printf("It is still alive.\n");
         return 0;
     } else {
         printf("It is dead!\n");
@@ -32,7 +32,7 @@ int Monster_init(void *self)
 Object MonsterProto = {
     .init = Monster_init,
     .attack = Monster_attack
-}:
+};
 
 void *Room_move(void *self, Direction direction)
 {
@@ -76,7 +76,7 @@ int Room_attack(void *self, int damage)
 
 Object RoomProto = {
     .move = Room_move,
-    .attack = Room_attack;
+    .attack = Room_attack
 };
 
 void *Map_move(void *self, Direction direction)
@@ -85,7 +85,7 @@ void *Map_move(void *self, Direction direction)
     Room *location = map->location;
     Room *next = NULL;
 
-    next = location->_move(move)(location, direction);
+    next = location->_(move)(location, direction);
 
     if(next) {
         map->location = next;
@@ -133,9 +133,9 @@ int Map_init(void *self)
 }
 
 Object MapProto = {
-    .init = Map_init;
-    .move = Map_move;
-    .attack = Map_attack;
+    .init = Map_init,
+    .move = Map_move,
+    .attack = Map_attack
 };
 
 int process_input(Map *game)
@@ -154,19 +154,19 @@ int process_input(Map *game)
             break;
 
         case 'n':
-            game->_(move)(game, north);
+            game->_(move)(game, NORTH);
             break;
 
         case 's':
-            game->_(move)(game, south);
+            game->_(move)(game, SOUTH);
             break;
 
         case 'e':
-            game->_(move)(game, east);
+            game->_(move)(game, EAST);
             break;
 
         case 'w':
-            game->_(move)(game, west);
+            game->_(move)(game, WEST);
             break;
 
         case 'a':
@@ -194,7 +194,7 @@ int main(int argc, char *argv[])
     srand(time(NULL));
 
     // make our map to work with
-    Map *game = NEW(Map, "The Hall of hte Monotaur.")
+    Map *game = NEW(Map, "The Hall of hte Monotaur.");
 
     printf("You enter the ");
 
