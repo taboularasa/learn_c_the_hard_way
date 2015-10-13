@@ -34,8 +34,8 @@ void *Object_move(void *self, Direction direction)
 
 int *Object_new(size_t size, Object proto, char *description)
 {
-    // setup the default function sin case they aren't set
-    if(!proto.init) proto.init = Object.null;
+    // setup the default functions in case they aren't set
+    if(!proto.init) proto.init = Object_init;
     if(!proto.describe) proto.describe = Object_describe;
     if(!proto.destroy) proto.destroy = Object_destroy;
     if(!proto.attack) proto.attack = Object_attack;
