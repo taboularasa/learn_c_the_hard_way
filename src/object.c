@@ -6,7 +6,7 @@
 
 void Object_destroy(void *self)
 {
-    Object *object = self;
+    Object *obj = self;
 
     if(obj) {
         if(obj->description) free(obj->description);
