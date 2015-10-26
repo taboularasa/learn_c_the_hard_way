@@ -4,7 +4,7 @@
 // makes THE SIZE in ex22.c available to other .c files
 extern int THE_SIZE;
 
-// gets an dsets an internal static variable in ex22.c
+// gets and sets an internal static variable in ex22.c
 int get_age();
 void set_age(int age);
 
