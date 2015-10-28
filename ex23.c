@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
     char to[1000] = {'c'};
     int rc = 0;
 
-    // setup the form to have some stuff
+    // setup the from to have some stuff
     memset(from, 'x', 1000);
     // set it to a failure mode
     memset(to, 'y', 1000);
